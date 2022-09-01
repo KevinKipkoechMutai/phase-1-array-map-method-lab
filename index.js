@@ -14,15 +14,9 @@ const tutorials = [
 
 
 const titleCased = () => {
-  return tutorials.map(word => {
-    let tutorial = word.toLowerCase().split(" ");
-    if (tutorial.isUpperCase === true) {
-      return tutorial;
-    } else {
-      for (let i = 0; i<tutorial.length; i++) {
-        tutorial[i] = tutorial[i].charAt(0).slice(0).toUpperCase() + tutorial[i].slice(0).substring(1);
-      }
-      return tutorial.join(" ");
-    }
+  return tutorials.map(tutorial => {
+    return tutorial.split(" ").map(word => {
+      return word[0].toUpperCase() + word.slice(1);
+    }).join(" ");
   });
 }
